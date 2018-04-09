@@ -1,6 +1,8 @@
-FROM        quay.io/prometheus/busybox:latest
 
-COPY bin/azure_metrics_exporter /bin/azure_metrics_exporter
+FROM quay.io/prometheus/busybox:latest
 
-EXPOSE      9276
-ENTRYPOINT  [ "/bin/azure_metrics_exporter" ]
+COPY azure-metrics-exporter /bin/azure-metrics-exporter
+
+EXPOSE 9276
+ENTRYPOINT ["/bin/azure-metrics-exporter"]
+
